@@ -3,8 +3,12 @@ const { MongoClient } = require("mongodb");
 // Imports DB admin credentials and connects to MongoDB Atlas (Comment out if deploying to Heroku or serving MongoDB locally)
 const dotenv = require("dotenv");
 dotenv.config();
+//I suggest to use const url = process.env.MONGODB_URI; instead, make it easier to set up process.env
+//This website gives a great example: https://developer.mongodb.com/how-to/use-atlas-on-heroku/
 const url = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ux7qi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
+//My personal preference is to limit the console.log to one or two per db functional call
+//connecting to .../connected all the time is not necessary
 // Implements CRUD routines on database
 function myDB() {
   const mydb = {};
