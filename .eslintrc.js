@@ -4,7 +4,8 @@ module.exports = {
     node: true,
     es2021: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  //should not have react plugin since not using it and link prettier
+  extends: ["eslint:recommended", "prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -12,7 +13,6 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
   rules: {
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
